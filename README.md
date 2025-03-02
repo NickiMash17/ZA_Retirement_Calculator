@@ -1,6 +1,12 @@
 # South African Retirement Savings Calculator 💰
 
-![Project Preview](lightmode.png) (darkmode.png) <!-- Add a screenshot or GIF of your project here -->
+## Project Preview
+
+### Light Mode
+![Light Mode Screenshot](lightmode.png)
+
+### Dark Mode
+![Dark Mode Screenshot](darkmode.png)
 
 A beautifully designed retirement savings calculator tailored for South Africans. Plan your financial future with precision, featuring dynamic projections, dark mode, and a user-friendly interface.
 
@@ -15,13 +21,7 @@ A beautifully designed retirement savings calculator tailored for South Africans
 ## How It Works 🛠️
 1. Enter your current age, retirement age, and savings details.
 2. Adjust advanced options like salary growth, tax rates, and investment strategy.
-3. Set your retirement goals and see if you're on track## Project Preview
-
-### Light Mode
-![Light Mode Screenshot](lightmode.png)
-
-### Dark Mode
-![Dark Mode Screenshot](darkmode.png).
+3. Set your retirement goals and see if you're on track.
 4. View detailed projections and monthly income estimates.
 
 ## Technologies Used 💻
