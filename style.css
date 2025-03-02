@@ -1,0 +1,389 @@
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #007C5A;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #005A41;
+}
+
+/* Body Styling with South African flag-inspired colors */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(-45deg, #007C5A, #FFB612, #DE3831, #002395);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    color: #333;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Calculator Container */
+.calculator-container {
+    max-width: 950px;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.calculator-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.calculator-header {
+    background: linear-gradient(135deg, #007C5A 0%, #005A41 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator-header h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.calculator-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.calculator-header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+/* Form Styling */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007C5A;
+    box-shadow: 0 0 0 0.25rem rgba(0, 124, 90, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #007C5A 0%, #005A41 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #009B70 0%, #007C5A 100%);
+}
+
+/* South African theme tabs */
+.nav-tabs .nav-link {
+    color: #555;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: #007C5A;
+    font-weight: 600;
+    background-color: #fff;
+    border-top: 3px solid #007C5A;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+/* Tab content container */
+.form-container {
+    padding: 30px;
+}
+
+/* Results Section */
+.results-container {
+    padding: 30px;
+    background: linear-gradient(135deg, #f0f8f3 0%, #e6f2ed 100%);
+    border-top: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.result-card {
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: white;
+    transform: translateY(0);
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.result-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007C5A;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.result-card:hover .result-value {
+    transform: scale(1.05);
+}
+
+/* Footer styling */
+.calculator-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* Toggle switch for dark mode */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #FFB612;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    color: #f3f4f6;
+}
+
+.dark-mode .calculator-container {
+    background-color: #1f2937;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form-control, .dark-mode .form-select {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+}
+
+.dark-mode .nav-tabs .nav-link {
+    color: #e5e7eb;
+    border-color: #4b5563;
+    background-color: #1f2937;
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+    background-color: #111827;
+    color: #FFB612;
+    border-top: 3px solid #FFB612;
+}
+
+.dark-mode .results-container {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+.dark-mode .result-card {
+    background: #111827;
+}
+
+.dark-mode .result-value {
+    color: #FFB612;
+}
+
+.dark-mode .result-label {
+    color: #f3f4f6;
+}
+
+/* Protea flower animation */
+.protea {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    opacity: 0.2;
+    animation: rotate 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Safari loader animation */
+.safari-loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.safari-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.safari-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #FFB612;
+    border-radius: 50%;
+    animation: safari-move 2s infinite linear;
+}
+
+@keyframes safari-move {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(170px, 0); background-color: #DE3831; }
+    50% { transform: translate(170px, 170px); background-color: #007C5A; }
+    75% { transform: translate(0, 170px); background-color: #002395; }
+    100% { transform: translate(0, 0); background-color: #FFB612; }
+}
+
+/* South African flag elements */
+.flag-stripe {
+    height: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.flag-red {
+    background-color: #DE3831;
+    top: 0;
+}
+
+.flag-blue {
+    background-color: #002395;
+    bottom: 0;
+}
+
+.flag-green {
+    position: absolute;
+    width: 5px;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    background-color: #007C5A;
+}
+
+.flag-yellow {
+    position: absolute;
+    width: 5px;
+    top: 5px;
+    bottom: 5px;
+    right: 0;
+    background-color: #FFB612;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .calculator-container {
+        margin: 15px;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    .calculator-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .calculator-header p {
+        font-size: 0.9rem;
+    }
+    
+    .result-value {
+        font-size: 1.5rem;
+    }
+}
