@@ -46,5 +46,5 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 Crafted with ❤️ by **[Your Name](https://github.com/yourusername)**  
 [![GitHub](https://img.shields.io/badge/GitHub-NickiMash17-blue?style=flat&logo=github)](https://github.com/NickiMash17)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-nicolette-mashaba-b094a5221/-blue?style=flat&logo=linkedin)](https://linkedin.com/in/nicolette-mashaba-b094a5221/)  _
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-/nicolette-mashaba-b094a5221/-blue?style=flat&logo=linkedin)](https://linkedin.com/in/nicolette-mashaba-b094a5221/)  _
 [![Twitter](https://img.shields.io/badge/Twitter-m_neyi-blue?style=flat&logo=twitter)](https://twitter.com/m_neyi)
