@@ -1,6 +1,6 @@
 # South African Retirement Savings Calculator 💰
 
-![Project Preview](lightmode.png) <!-- Add a screenshot or GIF of your project here -->
+![Project Preview](lightmode.png) (darkmode.png) <!-- Add a screenshot or GIF of your project here -->
 
 A beautifully designed retirement savings calculator tailored for South Africans. Plan your financial future with precision, featuring dynamic projections, dark mode, and a user-friendly interface.
 
