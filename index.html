@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South African Retirement Savings Calculator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+       
+</head>
+<body>
+    <div class="safari-loader">
+        <div class="safari-container">
+            <div class="safari-circle"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="calculator-container animate__animated animate__fadeIn">
+            <div class="calculator-header">
+                <div class="flag-stripe flag-red"></div>
+                <div class="flag-stripe flag-blue"></div>
+                <div class="flag-green"></div>
+                <div class="flag-yellow"></div>
+                <div class="protea">
+                    <svg viewBox="0 0 100 100" fill="#ffffff">
+                        <path d="M50,0 C60,20 80,20 90,30 C80,40 80,60 70,70 C60,60 40,60 30,70 C20,60 20,40 10,30 C20,20 40,20 50,0 Z"></path>
+                        <circle cx="50" cy="40" r="10" fill="#DE3831"></circle>
+                    </svg>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-2 d-none d-md-block">
+                        <i class="fas fa-chart-line fa-4x"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="animate__animated animate__fadeInDown"><i class="fas fa-money-bill-wave me-2"></i>South African Retirement Calculator</h2>
+                        <p class="animate__animated animate__fadeInUp">Plan your future with confidence, rand by rand</p>
+                    </div>
+                    <div class="col-md-2 text-end">
+                        <label class="toggle-switch mt-2">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                        <small class="d-block text-light">Night Mode</small>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="nav nav-tabs" id="calculatorTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic-info" type="button" role="tab" aria-controls="basic-info" aria-selected="true">
+                        <i class="fas fa-calculator me-2"></i>Basic Info
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="advanced-tab" data-bs-toggle="tab" data-bs-target="#advanced-options" type="button" role="tab" aria-controls="advanced-options" aria-selected="false">
+                        <i class="fas fa-sliders-h me-2"></i>Advanced Options
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="goals-tab" data-bs-toggle="tab" data-bs-target="#retirement-goals" type="button" role="tab" aria-controls="retirement-goals" aria-selected="false">
+                        <i class="fas fa-bullseye me-2"></i>Goals
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="form-container">
+                <div class="tab-content" id="calculatorTabsContent">
+                    <!-- Basic Info Tab -->
+                    <div class="tab-pane fade show active" id="basic-info" role="tabpanel" aria-labelledby="basic-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="currentAge" class="form-label">Current Age</label>
+                                    <input type="number" class="form-control" id="currentAge" placeholder="Enter your current age" min="18" max="100" value="30">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="retirementAge" class="form-label">Retirement Age</label>
+                                    <input type="number" class="form-control" id="retirementAge" placeholder="Enter your retirement age" min="18" max="100" value="65">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="currentSavings" class="form-label">Current Savings (R)</label>
+                                    <input type="number" class="form-control" id="currentSavings" placeholder="Enter your current savings" value="100000">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="monthlyContribution" class="form-label">Monthly Contribution (R)</label>
+                                    <input type="number" class="form-control" id="monthlyContribution" placeholder="Enter monthly contribution" value="2000">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="annualReturn" class="form-label">Expected Annual Return (%)</label>
+                                    <input type="number" class="form-control" id="annualReturn" placeholder="Enter expected annual return" step="0.1" value="8.5">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inflationRate" class="form-label">Inflation Rate (%)</label>
+                                    <input type="number" class="form-control" id="inflationRate" placeholder="Enter inflation rate" step="0.1" value="5.0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg" id="calculateButton">
+                                <i class="fas fa-calculator me-2"></i>Calculate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Options Tab -->
+                    <div class="tab-pane fade" id="advanced-options" role="tabpanel" aria-labelledby="advanced-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="salaryGrowthRate" class="form-label">Salary Growth Rate (%)</label>
+                                    <input type="number" class="form-control" id="salaryGrowthRate" placeholder="Enter expected salary growth rate" step="0.1" value="6.0">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="taxRate" class="form-label">Marginal Tax Rate (%)</label>
+                                    <input type="number" class="form-control" id="taxRate" placeholder="Enter your current tax rate" step="1" value="26">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="retirementSpending" class="form-label">Monthly Retirement Spending (R)</label>
+                                    <input type="number" class="form-control" id="retirementSpending" placeholder="Enter expected retirement spending" value="15000">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lifeExpectancy" class="form-label">Life Expectancy (Years)</label>
+                                    <input type="number" class="form-control" id="lifeExpectancy" placeholder="Enter life expectancy" min="60" max="120" value="85">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg" id="saveAdvancedOptions">
+                                <i class="fas fa-save me-2"></i>Save Advanced Options
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Goals Tab -->
+                    <div class="tab-pane fade" id="retirement-goals" role="tabpanel" aria-labelledby="goals-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="retirementGoal" class="form-label">Retirement Goal (R)</label>
+                                    <input type="number" class="form-control" id="retirementGoal" placeholder="Enter your retirement goal" value="5000000">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="goalTimeline" class="form-label">Goal Timeline (Years)</label>
+                                    <input type="number" class="form-control" id="goalTimeline" placeholder="Enter goal timeline" value="35">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="riskTolerance" class="form-label">Risk Tolerance</label>
+                                    <select class="form-select" id="riskTolerance">
+                                        <option value="low">Low (Conservative)</option>
+                                        <option value="medium" selected>Medium (Balanced)</option>
+                                        <option value="high">High (Aggressive)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="investmentStrategy" class="form-label">Investment Strategy</label>
+                                    <select class="form-select" id="investmentStrategy">
+                                        <option value="conservative">Money Market & Fixed Income</option>
+                                        <option value="balanced" selected>Balanced Fund</option>
+                                        <option value="aggressive">High Equity</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg" id="setGoals">
+                                <i class="fas fa-bullseye me-2"></i>Set Goals
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container">
+                <h3 class="text-center mb-4">Your Retirement Projection</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="result-card">
+                            <div class="card-body text-center">
+                                <div class="result-value" id="totalSavings">R0</div>
+                                <div class="result-label">Total Savings at Retirement</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="result-card">
+                            <div class="card-body text-center">
+                                <div class="result-value" id="monthlyIncome">R0</div>
+                                <div class="result-label">Monthly Income in Retirement</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="result-card">
+                            <div class="card-body text-center">
+                                <div class="result-value" id="savingsRate">0%</div>
+                                <div class="result-label">Savings Rate vs Goal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <canvas id="progressChart" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="calculator-footer">
+                <p class="mb-0">© 2025 South African Retirement Calculator | Helping South Africans plan for a better tomorrow</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
