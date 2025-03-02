@@ -175,15 +175,53 @@ body {
     transform: scale(1.05);
 }
 
-/* Footer styling */
+/* Footer Styling */
 .calculator-footer {
     background-color: #333;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 15px;
     font-size: 0.9rem;
 }
 
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.signature {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FFB612;
+}
+
+/* Dark mode adjustments */
+.dark-mode .calculator-footer {
+    background-color: #1f2937;
+}
+
+.dark-mode .social-icons a {
+    color: #f3f4f6;
+}
+
+.dark-mode .social-icons a:hover {
+    color: #FFB612;
+}
 /* Toggle switch for dark mode */
 .toggle-switch {
     position: relative;
