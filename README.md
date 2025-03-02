@@ -34,7 +34,7 @@ A beautifully designed retirement savings calculator tailored for South Africans
 2. Open ```index.html``` in your browser.  
 
 ## Live Demo 🌐
-Check out the live demo [here](https://yourusername.github.io/south-african-retirement-calculator).
+Check out the live demo [here](https://za-retirement-calculator.vercel.app/).
 
 ## Contributing 🤝
 Contributions are welcome! Please open an issue or submit a pull request.
