@@ -15,7 +15,13 @@ A beautifully designed retirement savings calculator tailored for South Africans
 ## How It Works 🛠️
 1. Enter your current age, retirement age, and savings details.
 2. Adjust advanced options like salary growth, tax rates, and investment strategy.
-3. Set your retirement goals and see if you're on track.
+3. Set your retirement goals and see if you're on track## Project Preview
+
+### Light Mode
+![Light Mode Screenshot](lightmode.png)
+
+### Dark Mode
+![Dark Mode Screenshot](darkmode.png).
 4. View detailed projections and monthly income estimates.
 
 ## Technologies Used 💻
